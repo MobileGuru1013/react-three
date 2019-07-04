@@ -1,0 +1,99 @@
+{
+  "name": "react-three",
+  "version": "0.9.7",
+  "description": "Construct three.js scenes using React",
+  "keywords": [
+    "react",
+    "reactjs",
+    "threejs",
+    "webGL",
+    "canvas"
+  ],
+  "author": {
+    "name": "Gary Haussmann",
+    "email": "gjhaussmann@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Izzimach/react-three"
+  },
+  "license": "Apache-2.0",
+  "files": [
+    "es5",
+    "src"
+  ],
+  "main": "es5/react-three-commonjs.js",
+  "es6": "src/ReactTHREE.js",
+  "jsnext:main": "src/ReactTHREE.js",
+  "dependencies": {
+    "fbjs": "^0.8.0",
+    "object-assign": "^4.0.1"
+  },
+  "peerDependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "three": "^0.83.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.0.0",
+    "babel-eslint": "~5.0.0",
+    "babel-loader": "^6.0.0",
+    "babel-plugin-transform-runtime": "^6.6.0",
+    "babel-preset-es2015": "^6.0.0",
+    "babel-preset-react": "^6.0.0",
+    "babel-preset-stage-2": "^6.0.0",
+    "babel-runtime": "^6.6.1",
+    "eslint": "2.2.0",
+    "expose-loader": "^0.7.0",
+    "jasmine-core": "^2.3.4",
+    "karma": "~0.13.0",
+    "karma-chrome-launcher": "~0.2.2",
+    "karma-firefox-launcher": "~0.1.3",
+    "karma-jasmine": "~0.3.2",
+    "lodash": "~4.17.11",
+    "raw-loader": "^0.5.1",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "resemblejs": "^2.2.0",
+    "rimraf": "~2.5.0",
+    "three": "^0.83.0",
+    "webpack": "^1.12.1",
+    "webpack-dev-server": "~1.14.1"
+  },
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server --progress-colors",
+    "examples": "webpack-dev-server --progress --colors --config webpack-examples.config.js",
+    "build-commonjs": "webpack --config webpack-commonjs.config.js",
+    "lint": "eslint src examples",
+    "test": "karma start",
+    "rendertest": "karma start karma.conf-withrender.js",
+    "pixelrefs": "slimerjs test/pixels/generatetestrender.js",
+    "pretest": "npm run build",
+    "prerendertest": "npm run build",
+    "prepublish": "npm run build-commonjs",
+    "preexamples": "npm run build",
+    "dist-clojars": "node build-clojars.js"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "parser": "babel-eslint",
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+    },
+    "ecmaFeatures": {
+      "spread": true
+    },
+    "rules": {
+      "strict": [
+        0
+      ],
+      "eqeqeq": 2
+    }
+  },
+  "engines": {
+    "node": ">=0.12.0"
+  }
+}
